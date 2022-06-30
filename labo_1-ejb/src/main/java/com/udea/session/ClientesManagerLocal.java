@@ -17,5 +17,7 @@ import javax.ejb.Local;
 public interface ClientesManagerLocal {
 
     List<Clientes> getAllClientes();
+
+    Clientes addClient(Clientes cliente);
     
 }
