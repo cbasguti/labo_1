@@ -27,15 +27,39 @@ public class TransactionBean implements Serializable {
      * Creates a new instance of TransactionBean
      */
     public TransactionBean() {
-        
+        cliente = new Clientes();
     }
 
     public List<Clientes> getClientes() {
-        clientes = clientesManager.getAllClientes();
+        if ((clientes == null) || (clientes.isEmpty())) {
+            refresh();
+        }
         return clientes;
     }
 
     public Clientes getDetails() {
         return cliente;
     }
+
+    public String create() {
+        System.out.println("###CREATE###");
+        cliente = clientesManager.addClient(cliente);
+        return "SAVED";
+
+    }
+
+    public void refresh() {
+        clientes = clientesManager.getAllClientes();
+    }
+
+    public String validate() {
+        if (cliente.getCvv() < 100 || cliente.getCvv() > 999) {
+            System.out.println("El cvv no es válido");
+            return null;
+        }
+
+        create();
+        return "SAVED";
+    }
+
 }

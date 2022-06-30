@@ -91,14 +91,13 @@
                     <div class="center">
                         <p:captcha id="captcha"></p:captcha>
                     </div>
+                    <br/>
+                    <h:commandButton id="back" value="Confirmar" action="#{transactionBean.validate()}"/>
                 </h:form>
             </f:view>
         </div>
         <div class="center">
-            <a class="btn btn-success center" href="#">Confirmar</a>
-        </div>
-        <div class="center">
-            <a class="btn btn-success center" href="/labo_1-web/">Regresar</a>
+            <a class="btn btn-info center" href="/labo_1-web/">Regresar</a>
         </div>        
     </h:body>
 </html>
