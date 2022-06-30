@@ -27,6 +27,7 @@ public class TransactionBean implements Serializable {
      * Creates a new instance of TransactionBean
      */
     public TransactionBean() {
+        
     }
 
     public List<Clientes> getClientes() {
