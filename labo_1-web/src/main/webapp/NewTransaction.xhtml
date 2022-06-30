@@ -21,7 +21,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .center {
+        .center{
             margin: auto;
             width: 50%;
             padding: 10px;
@@ -29,6 +29,30 @@
             display:flex;
             justify-content: center;
         } 
+
+        .tableForm {
+            width: 400px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: right;
+            padding: 10px;
+        }
+
+        .ui-panelgrid tr,.ui-panelgrid td{
+            color: #fff;
+            border: 0 !important;
+            background-color: rgba(255,255,255,0.2) !important;
+        }
+
+        .inputCel{
+            width: 100%;
+        }
+
+        .ui-outputlabel-rfi{
+            display: none;
+        }
+
     </style>
     <h:head>
         <title>Nueva Transacción</title>
@@ -39,40 +63,42 @@
         <div class="center">
             <f:view>
                 <h:form>
-                    <h1><h:outputText value="Agregar transacción"/></h1>
-                    <p:panelGrid columns="2">
+                    <h1 style="color: #fff;"><h:outputText value="Agregar transacción"/></h1>
+                    <p:panelGrid styleClass="tableForm" columns="2">
                         <p:outputLabel value="Codigo:" for="codigo" />
-                        <p:inputText id="codigo" value="#{transactionBean.details.codigo}" title="Codigo" required="true" requiredMessage="The Codigo field is required."/>
+                        <p:inputText styleClass="inputCel" id="codigo" value="#{transactionBean.details.codigo}" title="Codigo" required="true" requiredMessage="The Codigo field is required."/>
                         <p:outputLabel value="Apellido:" for="apellido" />
-                        <p:inputText id="apellido" value="#{transactionBean.details.apellido}" title="Apellido" />
+                        <p:inputText styleClass="inputCel" id="apellido" value="#{transactionBean.details.apellido}" title="Apellido" />
                         <p:outputLabel value="Email:" for="email" />
-                        <p:inputText id="email" value="#{transactionBean.details.email}" title="Email" />
+                        <p:inputText styleClass="inputCel" id="email" value="#{transactionBean.details.email}" title="Email" />
                         <p:outputLabel value="Nombre:" for="nombre" />
-                        <p:inputText id="nombre" value="#{transactionBean.details.nombre}" title="Nombre" />
+                        <p:inputText styleClass="inputCel" id="nombre" value="#{transactionBean.details.nombre}" title="Nombre" />
                         <p:outputLabel value="Cvv:" for="cvv" />
-                        <p:inputText id="cvv" value="#{transactionBean.details.cvv}" title="Cvv" />
+                        <p:inputText styleClass="inputCel" id="cvv" value="#{transactionBean.details.cvv}" title="Cvv" />
                         <p:outputLabel value="TipoTarjeta:" for="tipoTarjeta" />
-                        <p:inputText id="tipoTarjeta" value="#{transactionBean.details.tipoTarjeta}" title="TipoTarjeta" />
+                        <p:inputText styleClass="inputCel" id="tipoTarjeta" value="#{transactionBean.details.tipoTarjeta}" title="TipoTarjeta" />
                         <p:outputLabel value="Valor:" for="valor" />
-                        <p:inputText id="valor" value="#{transactionBean.details.valor}" title="Valor" />
+                        <p:inputText styleClass="inputCel" id="valor" value="#{transactionBean.details.valor}" title="Valor" />
                         <p:outputLabel value="FechaVenc:" for="fechaVenc" />
-                        <p:inputText id="fechaVenc" value="#{transactionBean.details.fechaVenc}" title="FechaVenc" />
+                        <p:inputText styleClass="inputCel" id="fechaVenc" value="#{transactionBean.details.fechaVenc}" title="FechaVenc" />
                         <p:outputLabel value="FechaTra:" for="fechaTra" />
-                        <p:inputText id="fechaTra" value="#{transactionBean.details.fechaTra}" title="FechaTra" >
+                        <p:inputText styleClass="inputCel" id="fechaTra" value="#{transactionBean.details.fechaTra}" title="FechaTra" >
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </p:inputText>
                         <p:outputLabel value="NumTarjeta:" for="numTarjeta" />
-                        <p:inputText id="numTarjeta" value="#{transactionBean.details.numTarjeta}" title="NumTarjeta" />
+                        <p:inputText styleClass="inputCel" id="numTarjeta" value="#{transactionBean.details.numTarjeta}" title="NumTarjeta" />
                     </p:panelGrid>
-                    <p:captcha id="captcha"></p:captcha>
+                    <div class="center">
+                        <p:captcha id="captcha"></p:captcha>
+                    </div>
                 </h:form>
             </f:view>
         </div>
         <div class="center">
-            <a class="btn btn-info center" href="#">Confirmar</a>
+            <a class="btn btn-success center" href="#">Confirmar</a>
         </div>
         <div class="center">
-            <a class="btn btn-info center" href="/labo_1-web/">Regresar</a>
+            <a class="btn btn-success center" href="/labo_1-web/">Regresar</a>
         </div>        
     </h:body>
 </html>
