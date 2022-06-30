@@ -25,7 +25,7 @@
                     <h1><h:outputText value="Agregar transacción"/></h1>
                     <p:panelGrid columns="2">
                         <p:outputLabel value="Codigo:" for="codigo" />
-                        <p:inputText id="codigo" value="#{transactionBean.details.codigo}" title="Codigo" required="true" requiredMessage="The Codigo field is required."/>
+                        <p:inputText class="form-control" id="codigo" value="#{transactionBean.details.codigo}" title="Codigo" required="true" requiredMessage="The Codigo field is required."/>
                         <p:outputLabel value="Apellido:" for="apellido" />
                         <p:inputText id="apellido" value="#{transactionBean.details.apellido}" title="Apellido" />
                         <p:outputLabel value="Email:" for="email" />
@@ -47,6 +47,7 @@
                         <p:outputLabel value="NumTarjeta:" for="numTarjeta" />
                         <p:inputText id="numTarjeta" value="#{transactionBean.details.numTarjeta}" title="NumTarjeta" />
                     </p:panelGrid>
+                    <p:captcha id="captcha"></p:captcha>
                 </h:form>
             </f:view>
         </div>
