@@ -13,7 +13,7 @@ import javax.ejb.EJB;
 
 /**
  *
- * @author sebas y otros
+ * @author sebas, victor y otros
  */
 public class TransactionBean implements Serializable {
 
