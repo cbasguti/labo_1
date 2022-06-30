@@ -47,11 +47,10 @@
                         <p:outputLabel value="NumTarjeta:" for="numTarjeta" />
                         <p:inputText id="numTarjeta" value="#{transactionBean.details.numTarjeta}" title="NumTarjeta" />
                     </p:panelGrid>
+                    <br/>
+                    <h:commandButton id="back" value="Confirmar" action="#{transactionBean.validate()}"/>
                 </h:form>
             </f:view>
-        </div>
-        <div class="center">
-            <a class="btn btn-info center" href="#">Confirmar</a>
         </div>
         <div class="center">
             <a class="btn btn-info center" href="/labo_1-web/">Regresar</a>
