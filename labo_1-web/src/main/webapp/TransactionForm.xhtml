@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <style type="text/css">
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+            text-align:center;
+        }      
+    </style>
+    <h:head>
+        <title>Índice de Transacciones</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1 class="center"><h:outputText value="Índice de Transacciones"/></h1>
+                <p:dataTable value="#{transactionBean.clientes}" var="item">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Codigo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.codigo}"/>
+                    </p:column>
+                    <p:column headerText="Qr Code" >    
+                        <p:barcode value="#{item.codigo}  #{item.valor}  #{item.fechaTra}" 
+                                   type="qr" height="150px" width="150px" /> 
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nombre"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nombre}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Apellido"/>
+                        </f:facet>
+                        <h:outputText value="#{item.apellido}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Email"/>
+                        </f:facet>
+                        <h:outputText value="#{item.email}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="TipoTarjeta"/>
+                        </f:facet>
+                        <h:outputText value="#{item.tipoTarjeta}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="NumTarjeta"/>
+                        </f:facet>
+                        <h:outputText value="#{item.numTarjeta}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Cvv"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cvv}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Valor"/>
+                        </f:facet>
+                        <h:outputText value="#{item.valor}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="FechaVenc"/>
+                        </f:facet>
+                        <h:outputText value="#{item.fechaVenc}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="FechaTra"/>
+                        </f:facet>
+                        <h:outputText value="#{item.fechaTra}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </f:view>
+        <div class="center">
+            <a class="btn btn-info center" href="/labo_1-web/">Regresar</a>
+        </div>
+    </h:body>
+</html>
+
