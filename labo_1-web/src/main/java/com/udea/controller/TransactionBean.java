@@ -8,6 +8,7 @@ package com.udea.controller;
 import com.udea.entity.Clientes;
 import com.udea.session.ClientesManagerLocal;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
@@ -34,7 +35,7 @@ public class TransactionBean implements Serializable {
     public List<Clientes> getClientes() {        
         if ((clientes == null) || (clientes.isEmpty())) {
             refresh();
-        }
+        }  
         return clientes;
     }
 
@@ -55,7 +56,7 @@ public class TransactionBean implements Serializable {
         }
         cliente.setCodigo(maxcode + 1);//<----- código más alto encontrado + 1
         
-        //añadimos la fecha actual a esta webada
+        //añadimos la fecha actual
         Date date = new Date();        
         cliente.setFechaTra(date);        
 
@@ -70,6 +71,8 @@ public class TransactionBean implements Serializable {
     }
 
     public String validate() {
+
+        //Validaciones con regex
         if (!cliente.getNombre().matches("^[a-zA-Z]*$")) {
             System.out.println("El nombre no es válido");
             return null;
@@ -90,13 +93,34 @@ public class TransactionBean implements Serializable {
             return null;
         }
         
-        if(cliente.getValor() < 5000 || cliente.getValor() > 10000) {
+        if(cliente.getValor() < 500 || cliente.getValor() > 10000) {
             System.out.println("El valor de la transaccion no es válido");
             return null;
         }
         
-        if (!cliente.getFechaVenc().matches("^\\d{4}-\\d{2}-\\d{2}$")) {
+        if (!cliente.getFechaVenc().matches("^\\d{4}-\\d{2}$")) {
             System.out.println("La fecha de vencimiento no es válida");
+            return null;
+        }       
+        
+        if(!(cliente.getNumTarjeta().toString()).matches("^\\d{16}$")) {
+            System.out.println("El numero de tarjeta no tiene los digitos correctos");
+            return null;
+        } 
+        
+        //Se toma el BigInteger y se extraen los 5 primeros digitos
+        int numTarjeta = cliente.getNumTarjeta().divide(new BigInteger("100000000000")).intValue(); 
+        
+        if (numTarjeta > 11111 && numTarjeta < 22222) {
+            cliente.setTipoTarjeta("American Express");
+        } else if (numTarjeta > 33334 && numTarjeta < 44444) {
+            cliente.setTipoTarjeta("Diners");
+        } else if (numTarjeta > 55555 && numTarjeta < 66666) {
+            cliente.setTipoTarjeta("Visa");
+        } else if (numTarjeta > 77777 && numTarjeta < 88888) {
+            cliente.setTipoTarjeta("Mastercard");
+        } else {
+            System.out.println("El numero de tarjeta no corresponde al tipo de tarjetas");
             return null;
         }
         
