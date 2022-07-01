@@ -8,6 +8,7 @@ package com.udea.controller;
 import com.udea.entity.Clientes;
 import com.udea.session.ClientesManagerLocal;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
@@ -97,6 +98,26 @@ public class TransactionBean implements Serializable {
         
         if (!cliente.getFechaVenc().matches("^\\d{4}-\\d{2}-\\d{2}$")) {
             System.out.println("La fecha de vencimiento no es válida");
+            return null;
+        }       
+        
+        if(!(cliente.getNumTarjeta().toString()).matches("^\\d{16}$")) {
+            System.out.println("El numero de tarjeta no tiene los digitos correctos");
+            return null;
+        } 
+        
+        int numTarjeta = cliente.getNumTarjeta().divide(new BigInteger("100000000000")).intValue(); 
+        
+        if (numTarjeta > 11111 && numTarjeta < 22222) {
+            cliente.setTipoTarjeta("American Express");
+        } else if (numTarjeta > 33334 && numTarjeta < 44444) {
+            cliente.setTipoTarjeta("Diners");
+        } else if (numTarjeta > 55555 && numTarjeta < 66666) {
+            cliente.setTipoTarjeta("Visa");
+        } else if (numTarjeta > 77777 && numTarjeta < 88888) {
+            cliente.setTipoTarjeta("Mastercard");
+        } else {
+            System.out.println("El numero de tarjeta no corresponde al tipo de tarjetas");
             return null;
         }
         
