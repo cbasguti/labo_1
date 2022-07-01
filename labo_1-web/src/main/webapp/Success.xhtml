@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="/labo_1-web/Resources/success.css"></link>
+    </h:head>
+    <h:body>
+        <div class="card">
+            <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+                <i class="checkmark">✓</i>
+            </div>
+            <h1>¡Transacción<br/>Exitosa!</h1> 
+            <p>A continuación, podrá ver más detalles<br/> de su transacción en un código QR</p>
+            <p:barcode value="dePruebas" 
+                       type="qr" height="150px" width="150px" /> 
+            <div class="center">
+                <a class="btn btn-success regresar" href="/labo_1-web/">Regresar</a>
+            </div>
+        </div>
+
+        <f:view>
+
+
+            <h:form>
+                <p:panelGrid columns="2">
+                    <h:outputText value="Codigo:"/>
+                    <h:outputText value="#{transactionBean.details.codigo}" title="Codigo"/>
+                    <h:outputText value="Apellido:"/>
+                    <h:outputText value="#{transactionBean.details.apellido}" title="Apellido"/>
+                    <h:outputText value="Email:"/>
+                    <h:outputText value="#{transactionBean.details.email}" title="Email"/>
+                    <h:outputText value="Nombre:"/>
+                    <h:outputText value="#{transactionBean.details.nombre}" title="Nombre"/>
+                    <h:outputText value="Cvv:"/>
+                    <h:outputText value="#{transactionBean.details.cvv}" title="Cvv"/>
+                    <h:outputText value="TipoTarjeta:"/>
+                    <h:outputText value="#{transactionBean.details.tipoTarjeta}" title="TipoTarjeta"/>
+                    <h:outputText value="Valor:"/>
+                    <h:outputText value="#{transactionBean.details.valor}" title="Valor"/>
+                    <h:outputText value="FechaVenc:"/>
+                    <h:outputText value="#{transactionBean.details.fechaVenc}" title="FechaVenc"/>
+                    <h:outputText value="FechaTra:"/>
+                    <h:outputText value="#{transactionBean.details.fechaTra}" title="FechaTra">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="NumTarjeta:"/>
+                    <h:outputText value="#{transactionBean.details.numTarjeta}" title="NumTarjeta"/>
+                </p:panelGrid>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
