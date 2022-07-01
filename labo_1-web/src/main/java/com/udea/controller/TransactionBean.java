@@ -35,7 +35,7 @@ public class TransactionBean implements Serializable {
     public List<Clientes> getClientes() {        
         if ((clientes == null) || (clientes.isEmpty())) {
             refresh();
-        }
+        }  
         return clientes;
     }
 
@@ -56,7 +56,7 @@ public class TransactionBean implements Serializable {
         }
         cliente.setCodigo(maxcode + 1);//<----- código más alto encontrado + 1
         
-        //añadimos la fecha actual a esta webada
+        //añadimos la fecha actual
         Date date = new Date();        
         cliente.setFechaTra(date);        
 
@@ -71,6 +71,8 @@ public class TransactionBean implements Serializable {
     }
 
     public String validate() {
+
+        //Validaciones con regex
         if (!cliente.getNombre().matches("^[a-zA-Z]*$")) {
             System.out.println("El nombre no es válido");
             return null;
@@ -91,12 +93,12 @@ public class TransactionBean implements Serializable {
             return null;
         }
         
-        if(cliente.getValor() < 5000 || cliente.getValor() > 10000) {
+        if(cliente.getValor() < 500 || cliente.getValor() > 10000) {
             System.out.println("El valor de la transaccion no es válido");
             return null;
         }
         
-        if (!cliente.getFechaVenc().matches("^\\d{4}-\\d{2}-\\d{2}$")) {
+        if (!cliente.getFechaVenc().matches("^\\d{4}-\\d{2}$")) {
             System.out.println("La fecha de vencimiento no es válida");
             return null;
         }       
@@ -106,6 +108,7 @@ public class TransactionBean implements Serializable {
             return null;
         } 
         
+        //Se toma el BigInteger y se extraen los 5 primeros digitos
         int numTarjeta = cliente.getNumTarjeta().divide(new BigInteger("100000000000")).intValue(); 
         
         if (numTarjeta > 11111 && numTarjeta < 22222) {
