@@ -1,0 +1,64 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1/07/2022, 08:48:08 AM
+    Author     : sebas
+*/
+body {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+}
+h1 {
+    color: #88B04B;
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+p {
+    color: #404F5E;
+    font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+    font-size:20px;
+    margin: 0;
+}
+i {
+    color: #9ABC66;
+    font-size: 100px;
+    line-height: 200px;
+    margin-left:-15px;
+}
+.card {
+    background: white;
+    padding: 60px;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px #C8D0D8;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.center{
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    text-align:center;
+    display:flex;
+    justify-content: center;
+} 
+
+.centerTable{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align:center;
+    display:flex;
+    justify-content: center;
+} 
+
+
+.regresar{
+    width: 100%;
+} 

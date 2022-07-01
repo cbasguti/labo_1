@@ -46,6 +46,8 @@ h1, h2{
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     text-align: right;
     padding: 10px;
+    border-radius: 8px;
+    margin: 20px;
 }
 
 .ui-panelgrid tr,.ui-panelgrid td{
@@ -56,28 +58,19 @@ h1, h2{
 
 .inputCel{
     width: 100%;
+    text-align: left !important;
+    border-radius: 8px;
 }
 
 .ui-outputlabel-rfi{
     display: none;
 }
 
+.cardImg, .cardLabel{
+    display: inline;
+    font-size: 14px;
+}
 
-/* 
-   Estilos de SaraU
-*/
- .ui-datatable table {
-         border-collapse: separate !important;
-         width: 100%;
-         table-layout: fixed;
-         }
-        
-         
-           .center {
-            margin: auto;
-            width: 50%;
-            padding: 10px;
-            text-align:center;
-            color: white;
-        } 
-        
+.cardImg{
+    width: 40px;
+}

@@ -85,7 +85,8 @@
                             <h:outputText value="FechaTra"/>
                         </f:facet>
                         <h:outputText value="#{item.fechaTra}">
-                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss"
+                                               timeZone="America/Bogota"/>
                         </h:outputText>
                     </p:column>
                 </p:dataTable>
