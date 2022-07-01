@@ -1,0 +1,73 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30/06/2022, 03:08:47 PM
+    Author     : sebas
+*/
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+    font-family: sans-serif;
+    font-weight: 100;
+}
+h1, h2{
+    color: #fff;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.center{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align:center;
+    display:flex;
+    justify-content: center;
+} 
+
+.center input, .center a{
+    width: 350px;
+} 
+
+.tableForm {
+    width: 400px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    text-align: right;
+    padding: 10px;
+}
+
+.ui-panelgrid tr,.ui-panelgrid td{
+    color: #fff;
+    border: 0 !important;
+    background-color: rgba(255,255,255,0.2) !important;
+}
+
+.inputCel{
+    width: 100%;
+    text-align: left !important;
+}
+
+.ui-outputlabel-rfi{
+    display: none;
+}
+
+.cardImg, .cardLabel{
+    display: inline;
+    font-size: 14px;
+}
+
+.cardImg{
+    width: 40px;
+}
