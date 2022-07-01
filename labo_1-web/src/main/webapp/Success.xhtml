@@ -22,37 +22,38 @@
                 <a class="btn btn-success regresar" href="/labo_1-web/">Regresar</a>
             </div>
         </div>
+        <div class="centerTable">
+            <f:view>
 
-        <f:view>
 
-
-            <h:form>
-                <p:panelGrid columns="2">
-                    <h:outputText value="Codigo:"/>
-                    <h:outputText value="#{transactionBean.details.codigo}" title="Codigo"/>
-                    <h:outputText value="Apellido:"/>
-                    <h:outputText value="#{transactionBean.details.apellido}" title="Apellido"/>
-                    <h:outputText value="Email:"/>
-                    <h:outputText value="#{transactionBean.details.email}" title="Email"/>
-                    <h:outputText value="Nombre:"/>
-                    <h:outputText value="#{transactionBean.details.nombre}" title="Nombre"/>
-                    <h:outputText value="Cvv:"/>
-                    <h:outputText value="#{transactionBean.details.cvv}" title="Cvv"/>
-                    <h:outputText value="TipoTarjeta:"/>
-                    <h:outputText value="#{transactionBean.details.tipoTarjeta}" title="TipoTarjeta"/>
-                    <h:outputText value="Valor:"/>
-                    <h:outputText value="#{transactionBean.details.valor}" title="Valor"/>
-                    <h:outputText value="FechaVenc:"/>
-                    <h:outputText value="#{transactionBean.details.fechaVenc}" title="FechaVenc"/>
-                    <h:outputText value="FechaTra:"/>
-                    <h:outputText value="#{transactionBean.details.fechaTra}" title="FechaTra">
-                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                    </h:outputText>
-                    <h:outputText value="NumTarjeta:"/>
-                    <h:outputText value="#{transactionBean.details.numTarjeta}" title="NumTarjeta"/>
-                </p:panelGrid>
-            </h:form>
-        </f:view>
+                <h:form>
+                    <p:panelGrid columns="2">
+                        <h:outputText value="Codigo:"/>
+                        <h:outputText value="#{transactionBean.details.codigo}" title="Codigo"/>
+                        <h:outputText value="Apellido:"/>
+                        <h:outputText value="#{transactionBean.details.apellido}" title="Apellido"/>
+                        <h:outputText value="Email:"/>
+                        <h:outputText value="#{transactionBean.details.email}" title="Email"/>
+                        <h:outputText value="Nombre:"/>
+                        <h:outputText value="#{transactionBean.details.nombre}" title="Nombre"/>
+                        <h:outputText value="Cvv:"/>
+                        <h:outputText value="#{transactionBean.details.cvv}" title="Cvv"/>
+                        <h:outputText value="TipoTarjeta:"/>
+                        <h:outputText value="#{transactionBean.details.tipoTarjeta}" title="TipoTarjeta"/>
+                        <h:outputText value="Valor:"/>
+                        <h:outputText value="#{transactionBean.details.valor}" title="Valor"/>
+                        <h:outputText value="FechaVenc:"/>
+                        <h:outputText value="#{transactionBean.details.fechaVenc}" title="FechaVenc"/>
+                        <h:outputText value="FechaTra:"/>
+                        <h:outputText value="#{transactionBean.details.fechaTra}" title="FechaTra">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="NumTarjeta:"/>
+                        <h:outputText value="#{transactionBean.details.numTarjeta}" title="NumTarjeta"/>
+                    </p:panelGrid>
+                </h:form>
+            </f:view>
+        </div>
     </h:body>
 </html>
 

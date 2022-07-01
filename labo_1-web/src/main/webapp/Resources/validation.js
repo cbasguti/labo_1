@@ -11,16 +11,12 @@ function isEmail(str) {
     return /^(.+)@(.+)$/.test(str);
 }
 
-// Validacion POST-SUBMIT
-/*$(".btn-save").click(function () {
- if (validateEmptyFields()) {
- alert("Por favor, no dejar campos vacíos");
- } else {
- validateLengthTarjeta();
- validateLengthCvv();
- validateCorreo();
- }
- });*/
+// Para vaciar los inputs
+$(".inputCel").each(function () {
+    if (!$(this).hasClass('tipo')) {
+        $(this).val('');
+    }
+});
 
 function errorOn(element) {
     $('.btn-save').prop('disabled', true);

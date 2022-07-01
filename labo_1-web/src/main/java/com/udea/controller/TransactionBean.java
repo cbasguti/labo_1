@@ -36,10 +36,16 @@ public class TransactionBean implements Serializable {
         if ((clientes == null) || (clientes.isEmpty())) {
             refresh();
         }  
+        refresh();
         return clientes;
     }
 
     public Clientes getDetails() {
+        cliente = new Clientes();
+        return cliente;
+    }
+    
+    public Clientes getSuccess() {
         return cliente;
     }
 
