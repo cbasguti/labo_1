@@ -116,13 +116,13 @@ public class TransactionBean implements Serializable {
         //Se toma el BigInteger y se extraen los 5 primeros digitos
         int numTarjeta = cliente.getNumTarjeta().divide(new BigInteger("100000000000")).intValue(); 
         
-        if (numTarjeta > 11111 && numTarjeta < 22222) {
+        if (numTarjeta >= 11111 && numTarjeta <= 22222) {
             cliente.setTipoTarjeta("American Express");
-        } else if (numTarjeta > 33334 && numTarjeta < 44444) {
+        } else if (numTarjeta >= 33334 && numTarjeta <= 44444) {
             cliente.setTipoTarjeta("Diners");
-        } else if (numTarjeta > 55555 && numTarjeta < 66666) {
+        } else if (numTarjeta >= 55555 && numTarjeta <= 66666) {
             cliente.setTipoTarjeta("Visa");
-        } else if (numTarjeta > 77777 && numTarjeta < 88888) {
+        } else if (numTarjeta >= 77777 && numTarjeta <= 88888) {
             cliente.setTipoTarjeta("Mastercard");
         } else {
             System.out.println("El numero de tarjeta no corresponde al tipo de tarjetas");
