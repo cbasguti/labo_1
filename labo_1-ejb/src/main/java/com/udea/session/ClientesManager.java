@@ -24,17 +24,14 @@ public class ClientesManager implements ClientesManagerLocal {
 
     @Override
     public List<Clientes> getAllClientes() {
-        Query query= em.createNamedQuery("Clientes.findAll");
+        Query query = em.createNamedQuery("Clientes.findAll");
         return query.getResultList();
     }
 
     @Override
-    public Clientes addClient(Clientes cliente) {        
+    public Clientes addClient(Clientes cliente) {
         em.persist(cliente);
         return cliente;
     }
-    
-    
-    
-    
+
 }
