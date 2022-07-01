@@ -7,10 +7,10 @@
     <h:head>
         <title>Nueva Transacción</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
-        <link rel="stylesheet" href="/labo_1-web/Styles/estilos.css"></link>
+        <link rel="stylesheet" href="/labo_1-web/Resources/estilos.css"></link>
     </h:head>
     <h:body>
-
+        <button onclick="myFunction()">Try it</button>
         <div class="center">
             <f:view>
                 <h:form>
@@ -26,8 +26,14 @@
                         <p:inputText styleClass="inputCel" id="nombre" value="#{transactionBean.details.nombre}" title="Nombre" />
                         <p:outputLabel value="Cvv:" for="cvv" />
                         <p:inputText styleClass="inputCel" id="cvv" value="#{transactionBean.details.cvv}" title="Cvv" />
-                        <p:outputLabel value="TipoTarjeta:" for="tipoTarjeta" />
-                        <p:inputText styleClass="inputCel" id="tipoTarjeta" value="#{transactionBean.details.tipoTarjeta}" title="TipoTarjeta" />
+                        <p:outputLabel value="NumTarjeta:" for="numTarjeta" />
+                        <p:inputText styleClass="inputCel nTarjeta" id="numTarjeta" value="#{transactionBean.details.numTarjeta}" title="NumTarjeta" />
+                        <p:outputLabel value="TipoTarjeta:"/>
+                        <div class="inputCel">
+                            <img class="cardImg" src="/labo_1-web/Images/not-found.png" alt="CardLogo"></img>
+                            <p class="cardLabel">No se ha ingresado un número de tarjeta</p>
+                        </div>
+                        <!--<p:inputText styleClass="inputCel" id="tipoTarjeta" value="#{transactionBean.details.tipoTarjeta}" title="TipoTarjeta" />-->
                         <p:outputLabel value="Valor:" for="valor" />
                         <p:inputText styleClass="inputCel" id="valor" value="#{transactionBean.details.valor}" title="Valor" />
                         <p:outputLabel value="FechaVenc:" for="fechaVenc" />
@@ -36,9 +42,7 @@
                         <p:inputText styleClass="inputCel" id="fechaTra" value="#{transactionBean.details.fechaTra}" title="FechaTra" >
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </p:inputText>
-                        <p:outputLabel value="NumTarjeta:" for="numTarjeta" />
-                        <p:inputText styleClass="inputCel" id="numTarjeta" value="#{transactionBean.details.numTarjeta}" title="NumTarjeta" />
-                    </p:panelGrid>
+                        </p:panelGrid>
                     <div class="center">
                         <p:captcha id="captcha"></p:captcha>
                     </div>
@@ -49,7 +53,9 @@
         </div>
         <div class="center">
             <a class="btn btn-info center" href="/labo_1-web/">Regresar</a>
-        </div>        
+        </div>  
     </h:body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/labo_1-web/Resources/validation.js"></script>
 </html>
 

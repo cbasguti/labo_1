@@ -56,8 +56,18 @@ h1, h2{
 
 .inputCel{
     width: 100%;
+    text-align: left !important;
 }
 
 .ui-outputlabel-rfi{
     display: none;
+}
+
+.cardImg, .cardLabel{
+    display: inline;
+    font-size: 14px;
+}
+
+.cardImg{
+    width: 40px;
 }
