@@ -74,3 +74,19 @@ h1, h2{
 .cardImg{
     width: 40px;
 }
+
+/*Estilos de Sara*/
+.ui-datatable table {
+    border-collapse: separate !important;
+    width: 100%;
+    table-layout: fixed;
+}
+
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align:center;
+    color: white;
+} 
