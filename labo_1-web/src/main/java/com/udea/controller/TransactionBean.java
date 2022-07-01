@@ -41,11 +41,6 @@ public class TransactionBean implements Serializable {
     }
 
     public Clientes getDetails() {
-        cliente = new Clientes();
-        return cliente;
-    }
-    
-    public Clientes getSuccess() {
         return cliente;
     }
 
@@ -70,11 +65,6 @@ public class TransactionBean implements Serializable {
         cliente = clientesManager.addClient(cliente);
         refresh();
         return "SAVED";
-    }
-    
-    public String createForm(){
-        cliente = new Clientes();
-        return "CREATE";
     }
 
     public void refresh() {
