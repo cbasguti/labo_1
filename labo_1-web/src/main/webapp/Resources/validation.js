@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+// Validation TIPO DE TARJETA
 $(".nTarjeta").on("keyup", function () {
     realTimeValidate();
 });
-document.getElementsByClassName("cardLabel").innerHTML = "MasterCard";
+
 function realTimeValidate() {
     var inputField = $(".nTarjeta").val();
-
     if (isMasterCard(inputField)) {
         $(".cardLabel").text("MasterCard");
         $(".cardImg").attr("src", "/labo_1-web/Images/mastercard.png");
@@ -25,6 +26,13 @@ function realTimeValidate() {
     } else{
         $(".cardLabel").text("No se ha ingresado un número de tarjeta");
         $(".cardImg").attr("src", "/labo_1-web/Images/not-found.png");
+    }
+    
+    if (!isCardNumber(inputField)){
+        alert("El número de tarjeta no debe contener caracteres.");
+        $('.btn-save').prop('disabled', true);
+    } else {
+        $('.btn-save').prop('disabled', false);
     }
 }
 
@@ -66,6 +74,10 @@ function isVisa(str) {
         }
     }
     return false;
+}
+
+function isCardNumber(str) {
+    return /^[0-9]*$/.test(str);
 }
 
 function myFunction() {
