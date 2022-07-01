@@ -10,38 +10,31 @@
         <link rel="stylesheet" href="/labo_1-web/Resources/estilos.css"></link>
     </h:head>
     <h:body>
-        <button onclick="myFunction()">Try it</button>
         <div class="center">
             <f:view>
                 <h:form>
                     <h1 style="color: #fff;"><h:outputText value="Agregar transacción"/></h1>
                     <p:panelGrid styleClass="tableForm" columns="2">
-                        <p:outputLabel value="Codigo:" for="codigo" />
-                        <p:inputText styleClass="inputCel" id="codigo" value="#{transactionBean.details.codigo}" title="Codigo" required="true" requiredMessage="The Codigo field is required."/>
-                        <p:outputLabel value="Apellido:" for="apellido" />
-                        <p:inputText styleClass="inputCel" id="apellido" value="#{transactionBean.details.apellido}" title="Apellido" />
-                        <p:outputLabel value="Email:" for="email" />
-                        <p:inputText styleClass="inputCel" id="email" value="#{transactionBean.details.email}" title="Email" />
                         <p:outputLabel value="Nombre:" for="nombre" />
-                        <p:inputText styleClass="inputCel" id="nombre" value="#{transactionBean.details.nombre}" title="Nombre" />
-                        <p:outputLabel value="Cvv:" for="cvv" />
-                        <p:inputText styleClass="inputCel" id="cvv" value="#{transactionBean.details.cvv}" title="Cvv" />
-                        <p:outputLabel value="NumTarjeta:" for="numTarjeta" />
+                        <p:inputText styleClass="inputCel nombre" id="nombre" value="#{transactionBean.details.nombre}" title="Nombre" />
+                        <p:outputLabel value="Apellido:" for="apellido" />
+                        <p:inputText styleClass="inputCel apellido" id="apellido" value="#{transactionBean.details.apellido}" title="Apellido" />
+                        <p:outputLabel value="Email:" for="email" />
+                        <p:inputText styleClass="inputCel correo" id="email" value="#{transactionBean.details.email}" title="Email" />               
+                        <p:outputLabel value="Tarjeta:" for="numTarjeta" />
                         <p:inputText styleClass="inputCel nTarjeta" id="numTarjeta" value="#{transactionBean.details.numTarjeta}" title="NumTarjeta" />
                         <p:outputLabel value="TipoTarjeta:"/>
-                        <div class="inputCel">
+                        <div class="inputCel tipo">
                             <img class="cardImg" src="/labo_1-web/Images/not-found.png" alt="CardLogo"></img>
                             <p class="cardLabel">No se ha ingresado un número de tarjeta</p>
                         </div>
                         <!--<p:inputText styleClass="inputCel" id="tipoTarjeta" value="#{transactionBean.details.tipoTarjeta}" title="TipoTarjeta" />-->
+                        <p:outputLabel value="CVV:" for="cvv" />
+                        <p:inputText styleClass="inputCel cvv" id="cvv" value="#{transactionBean.details.cvv}" title="Cvv" />
+                        <p:outputLabel value="ExpDate:" for="fechaVenc" />
+                        <p:inputText styleClass="inputCel fechaVenc" id="fechaVenc" value="#{transactionBean.details.fechaVenc}" title="FechaVenc" />
                         <p:outputLabel value="Valor:" for="valor" />
-                        <p:inputText styleClass="inputCel" id="valor" value="#{transactionBean.details.valor}" title="Valor" />
-                        <p:outputLabel value="FechaVenc:" for="fechaVenc" />
-                        <p:inputText styleClass="inputCel" id="fechaVenc" value="#{transactionBean.details.fechaVenc}" title="FechaVenc" />
-                        <p:outputLabel value="FechaTra:" for="fechaTra" />
-                        <p:inputText styleClass="inputCel" id="fechaTra" value="#{transactionBean.details.fechaTra}" title="FechaTra" >
-                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
-                        </p:inputText>
+                        <p:inputText styleClass="inputCel valor" id="valor" value="#{transactionBean.details.valor}" title="Valor" />
                         </p:panelGrid>
                     <div class="center">
                         <p:captcha id="captcha"></p:captcha>
