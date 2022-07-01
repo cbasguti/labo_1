@@ -3,6 +3,7 @@
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
         <Node id="TransactionForm.xhtml" x="155" y="265" zoom="false"/>
+        <Node id="Success.xhtml" x="400" y="150" zoom="true"/>
         <Node id="NewTransaction.xhtml" x="150" y="150" zoom="false"/>
         <Node id="MainMenu.xhtml" x="168" y="406" zoom="false"/>
     </Scope>

@@ -49,6 +49,16 @@ i {
     justify-content: center;
 } 
 
+.centerTable{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align:center;
+    display:flex;
+    justify-content: center;
+} 
+
+
 .regresar{
     width: 100%;
 } 
