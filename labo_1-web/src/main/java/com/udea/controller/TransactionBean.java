@@ -65,6 +65,11 @@ public class TransactionBean implements Serializable {
         refresh();
         return "SAVED";
     }
+    
+    public String createForm(){
+        cliente = new Clientes();
+        return "CREATE";
+    }
 
     public void refresh() {
         clientes = clientesManager.getAllClientes();
@@ -73,12 +78,12 @@ public class TransactionBean implements Serializable {
     public String validate() {
 
         //Validaciones con regex
-        if (!cliente.getNombre().matches("^[a-zA-Z]*$")) {
+        if (!cliente.getNombre().matches("^[a-zA-Z ]*$")) {
             System.out.println("El nombre no es válido");
             return null;
         }
         
-        if (!cliente.getApellido().matches("^[a-zA-Z]*$")) {
+        if (!cliente.getApellido().matches("^[a-zA-Z ]*$")) {
             System.out.println("El apellido no es válido");
             return null;
         }
@@ -98,7 +103,7 @@ public class TransactionBean implements Serializable {
             return null;
         }
         
-        if (!cliente.getFechaVenc().matches("^\\d{4}-\\d{2}$")) {
+        if (!cliente.getFechaVenc().matches("^(0[1-9]|1[0-2])\\/?([0-9]{2})$")) {
             System.out.println("La fecha de vencimiento no es válida");
             return null;
         }       
